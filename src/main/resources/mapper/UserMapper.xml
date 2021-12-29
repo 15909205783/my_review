@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yangfan.neo.dao.mapper.UserMapper">
+    <!--<cache type="com.neo.cache.MybatisRedisCache">-->
+        <!--<property name="eviction" value="LRU"/>-->
+        <!--<property name="flushInterval" value="6000000"/>-->
+        <!--<property name="size" value="1024"/>-->
+        <!--<property name="readOnly" value="false"/>-->
+    <!--</cache>-->
+    <resultMap id="BaseResultMap" type="com.yangfan.neo.dao.entity.User">
+        <id column="id" property="id"/>
+        <result column="user_name" property="userName"/>
+        <result column="pass_word" property="passWord"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, user_name, pass_word,
+    </sql>
+    <select id="getAll" resultMap="BaseResultMap" statementType="PREPARED">
+        select
+        <include refid="Base_Column_List"/>
+        FROM user
+    </select>
+    <insert id="insert" parameterType="com.yangfan.neo.dao.entity.User">
+        INSERT INTO
+            user
+            (user_name,pass_word,user_sex)
+        VALUES
+          (#{userName},#{passWord},#{userSex})
+    </insert>
+    <select id="selectById" resultMap="BaseResultMap">
+        select
+        id,user_name,pass_word
+        FROM user where id = #{id}
+    </select>
+    <select id="selectById2" resultType="com.yangfan.neo.dao.entity.User" statementType="PREPARED">
+        select
+        id,user_name,pass_word
+        FROM user
+    </select>
+    <select id="selectByIdOrName" resultType="com.yangfan.neo.dao.entity.User" statementType="PREPARED">
+        select
+        id,user_name,pass_word
+        FROM user where id = #{id} and user_name=#{name}
+    </select>
+
+    <update id="setName">
+        UPDATE user set user_name =#{arg1} WHERE id = #{arg0}
+    </update>
+</mapper>
