@@ -18,7 +18,7 @@ public class MybatisTest {
 
     @Test
     public void testQuery() {
-        User user = userMapper.selectById(1);
+        User user = userMapper.selectById(2);
         System.out.println(user);
     }
     @Test
