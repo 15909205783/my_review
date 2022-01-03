@@ -19,4 +19,6 @@ public interface UserMapper extends BaseMapper<User> {
 
     void setName(Integer id, String name);
 
+    User getOne(Long id);
+
 }

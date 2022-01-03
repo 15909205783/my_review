@@ -32,6 +32,11 @@
         id,user_name,pass_word
         FROM user where id = #{id}
     </select>
+    <select id="getOne" resultType="com.yangfan.neo.dao.entity.User">
+        select
+            id,user_name,pass_word
+        FROM user where id = #{id}
+    </select>
     <select id="selectById2" resultType="com.yangfan.neo.dao.entity.User" statementType="PREPARED">
         select
         id,user_name,pass_word
