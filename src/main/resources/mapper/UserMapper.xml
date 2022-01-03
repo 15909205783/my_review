@@ -23,9 +23,9 @@
     <insert id="insert" parameterType="com.yangfan.neo.dao.entity.User">
         INSERT INTO
             user
-            (user_name,pass_word,user_sex)
+            (user_name,pass_word)
         VALUES
-          (#{userName},#{passWord},#{userSex})
+          (#{userName},#{passWord})
     </insert>
     <select id="selectById" resultMap="BaseResultMap">
         select

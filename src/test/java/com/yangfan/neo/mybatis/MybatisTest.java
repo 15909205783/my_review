@@ -21,4 +21,12 @@ public class MybatisTest {
         User user = userMapper.selectById(1);
         System.out.println(user);
     }
+    @Test
+    public void testInsert(){
+        User user = new User();
+        user.setUserName("小明");
+        user.setPassWord("222");
+        userMapper.insert(user);
+
+    }
 }
