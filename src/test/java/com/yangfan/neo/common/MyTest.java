@@ -13,8 +13,13 @@ public class MyTest {
     @Value("${yangfan.mytest}")
     private boolean isY;
 
+    @Value("${test}")
+    private String param;
+
     @Test
     public void test(){
+        System.out.println("--------------------------");
+        System.out.println(param);
         if (!isY){
             System.out.println(isY);
         }

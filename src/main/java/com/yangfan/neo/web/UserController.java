@@ -4,6 +4,7 @@ package com.yangfan.neo.web;
 import com.yangfan.neo.dao.entity.User;
 import com.yangfan.neo.dao.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,8 @@ import java.util.List;
 public class UserController {
     @Autowired
     private UserMapper userMapper;
+    @Value("${test}")
+    private String param;
     @RequestMapping("/getUsers")
     public List<User> getUsers() {
         List<User> users = userMapper.getAll();
@@ -31,6 +34,8 @@ public class UserController {
 
     @RequestMapping("/getUser")
     public User getUser(Long id) {
+        System.out.println("____________________________");
+        System.out.println(param);
         User user = userMapper.getOne(id);
         return user;
     }
