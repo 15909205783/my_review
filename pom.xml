@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.yangfan</groupId>
-    <artifactId>my_spring_cloud</artifactId>
+    <artifactId>my_review</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>my_spring_cloud</name>
+    <name>my_review</name>
     <description>my_spring_cloud</description>
     <properties>
         <java.version>1.8</java.version>
