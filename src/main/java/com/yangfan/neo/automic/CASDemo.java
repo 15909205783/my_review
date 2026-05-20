@@ -8,5 +8,6 @@ public class CASDemo {
         System.out.println(atomicInteger.compareAndSet(5,2019));
         System.out.println(atomicInteger.compareAndSet(5,2018));
         atomicInteger.getAndIncrement();
+        System.out.println("最终结果："+atomicInteger);
     }
 }

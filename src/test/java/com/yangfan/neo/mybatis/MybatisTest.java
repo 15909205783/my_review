@@ -48,7 +48,7 @@ public class MybatisTest {
 
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        User user = userMapper.selectById(2);
+        User user = mapper.selectById(2);
         System.out.println(user);
     }
 }

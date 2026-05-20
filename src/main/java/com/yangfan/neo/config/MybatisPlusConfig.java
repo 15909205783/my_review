@@ -27,6 +27,12 @@ public class MybatisPlusConfig {
     }
 
     @Bean
+    public MYInterceptor customInterceptor(){
+        MYInterceptor myInterceptor = new MYInterceptor();
+        return myInterceptor;
+    }
+
+    @Bean
     public ConfigurationCustomizer configurationCustomizer() {
         return configuration -> configuration.setUseDeprecatedExecutor(false);
     }
