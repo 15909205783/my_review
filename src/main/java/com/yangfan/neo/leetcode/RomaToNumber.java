@@ -8,6 +8,7 @@ package com.yangfan.neo.leetcode;
 public class RomaToNumber {
 
     public static void main(String[] args) {
+        System.out.println("----->"+ (15 / 10));
         System.out.println(romanToInt("MCMXCIV"));
     }
 
@@ -24,6 +25,12 @@ public class RomaToNumber {
             }
             pre = num;
         }
+        String xx = "111";
+        xx.length();
+        char c = xx.charAt(1);
+        boolean b = xx.charAt(0) == c;
+
+
         sum += pre;
         return sum;
 
